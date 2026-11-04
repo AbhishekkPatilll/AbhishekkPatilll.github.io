@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abhishek Patil – AI & Machine Learning Portfolio</title>
+<meta name="description" content="Portfolio of Abhishek Patil, B.Tech AI & ML student at NMIMS MPSTME building computer vision, data and full-stack AI products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#000000; --surface:#0E0F12; --ink:#F2F4F8; --muted:#A3ABB8; --line:#26282D;
+  --accent:#7C95FF; --accent-ink:#000000; --box:#3DD6A8; --tint:#161B30;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.logo{font:800 20px var(--head);text-decoration:none;letter-spacing:-.02em}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;overflow-x:auto}
+.nav a.l{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;white-space:nowrap}
+.nav a.l:hover{color:var(--ink)}
+.hero{padding:88px 0 72px}
+.detect{position:relative;display:inline-block;padding:22px 30px 26px;margin-left:6px}
+.detect::before,.detect::after{content:"";position:absolute;width:26px;height:26px;border:3px solid var(--box)}
+.detect::before{top:0;left:0;border-right:0;border-bottom:0}
+.detect::after{bottom:0;right:0;border-left:0;border-top:0}
+.detect i{position:absolute;top:0;right:0;border:3px solid var(--box);border-left:0;border-bottom:0;width:26px;height:26px}
+.detect b{position:absolute;bottom:0;left:0;border:3px solid var(--box);border-right:0;border-top:0;width:26px;height:26px}
+.tag{position:absolute;top:-14px;left:26px;background:var(--box);color:var(--bg);font:600 13px/1 var(--body);padding:6px 10px;border-radius:3px;animation:pop .5s .5s both}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tag{animation:none}html{scroll-behavior:auto}}
+h1{font:800 clamp(44px,9vw,96px)/.98 var(--head);letter-spacing:-.035em;margin:0}
+.role{font:500 clamp(20px,3vw,26px)/1.3 var(--head);margin:28px 0 12px}
+.lede{max-width:60ch;color:var(--muted);margin:0 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(28px,4vw,40px)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 36px}
+h3{font:700 22px/1.25 var(--head);margin:0 0 6px}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:62ch}
+.facts{margin:0;padding:0;list-style:none;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.facts li{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.facts li:last-child{border:0}
+.facts span{color:var(--muted)}
+.facts strong{text-align:right;font-weight:600}
+.feat{background:var(--ink);color:var(--bg);border-radius:16px;padding:36px;margin-bottom:24px}
+.feat .when,.feat .stack{color:inherit;opacity:.8}
+.feat .pill{background:var(--box);color:var(--bg)}
+.pill{display:inline-block;background:var(--tint);color:var(--accent);font-weight:600;font-size:13px;padding:3px 10px;border-radius:99px;margin-bottom:14px}
+.feat p{max-width:64ch;margin:10px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px}
+.card p{margin:10px 0 14px;color:var(--muted);font-size:16px}
+.when{font-size:14px;color:var(--muted);margin:0}
+.stack{font-size:14px;font-weight:500;color:var(--accent);margin:0}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skills h3{font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{border:1px solid var(--line);background:var(--bg);padding:4px 12px;border-radius:6px;font-size:15px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:0 0 32px}
+.tl li::before{content:"";position:absolute;left:-30px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--accent)}
+.tl p{margin:4px 0 0;color:var(--muted);max-width:62ch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.two ul{margin:12px 0 0;padding-left:20px;color:var(--muted)}
+.two li{margin-bottom:8px}
+.edu{display:grid;gap:14px}
+.edu .card{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+.edu h3{font-size:19px}
+.contact{text-align:left}
+.contact p{max-width:52ch;color:var(--muted);margin:0 0 28px}
+.clinks{list-style:none;margin:0;padding:0;max-width:640px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.clinks li{display:flex;gap:20px;padding:16px 22px;border-bottom:1px solid var(--line);align-items:baseline}
+.clinks li:last-child{border:0}
+.clinks span{flex:0 0 76px;color:var(--muted);font-size:15px}
+.clinks a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:820px){
+  .about,.two,.skills,.grid{grid-template-columns:1fr}
+  .hero{padding:56px 0 48px} section{padding:52px 0} .feat{padding:26px}
+  .nav ul{gap:14px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Abhishek Patil</a>
+    <nav aria-label="Main"><ul>
+      <li><a class="l" href="#about">About</a></li>
+      <li><a class="l" href="#projects">Projects</a></li>
+      <li><a class="l" href="#skills">Skills</a></li>
+      <li><a class="l" href="#experience">Experience</a></li>
+      <li><a class="l" href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div class="detect"><span class="tag">ai_ml_engineer 0.99</span><i></i><b></b><h1>Abhishek<br>Patil</h1></div>
+    <p class="role">AI & machine learning student building computer vision and data products.</p>
+    <p class="lede">I’m a B.Tech student at NMIMS MPSTME who builds things end to end: face recognition and semantic search, real-time drowsiness detection, ML dashboards and concurrency-safe databases.</p>
+    <div class="btns">
+      <a class="btn p" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I’m an AI & Machine Learning undergraduate with hands-on experience in Python, deep learning, computer vision, data analysis, SQL and full-stack development.</p>
+      <p>My projects range from CNN models in TensorFlow and OpenCV to Django and React products backed by PostgreSQL and AWS. I like problems where a model has to work inside a real product that people can use.</p>
+      <p>Outside code, I taught rural students as a volunteer, served as head boy at school, and play district-level cricket.</p>
+    </div>
+    <ul class="facts">
+      <li><span>Degree</span><strong>B.Tech, AI & ML</strong></li>
+      <li><span>University</span><strong>NMIMS MPSTME</strong></li>
+      <li><span>Batch</span><strong>2023 – 2027</strong></li>
+      <li><span>Focus</span><strong>Computer vision, data</strong></li>
+      <li><span>From</span><strong>Nandurbar, Maharashtra</strong></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <article class="feat">
+    <span class="pill">In progress</span>
+    <h3>AlbumIQ: AI-powered wedding photo retrieval</h3>
+    <p>A platform that lets guests find their photos in a large wedding album using facial recognition, semantic search and vector similarity. Face embeddings (ArcFace / InsightFace) and CLIP feed a FAISS index for fast search across large photo collections, served by a Django REST backend, a React frontend, PostgreSQL and AWS S3 image storage.</p>
+    <p class="stack">Python · Django REST · React · ArcFace / InsightFace · CLIP · FAISS · PostgreSQL · AWS S3</p>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <h3>Driver Drowsiness Detection</h3>
+      <p class="when">Jan 2025 – Mar 2026</p>
+      <p>Real-time system that tracks the face and eyes to spot signs of fatigue. A CNN classifies drowsiness and triggers automated alerts to improve driver safety.</p>
+      <p class="stack">Python · CNN · TensorFlow · OpenCV</p>
+    </article>
+    <article class="card">
+      <h3>BusNexus: Bus Ticket Booking</h3>
+      <p class="when">Jan 2026 – Apr 2026</p>
+      <p>A PostgreSQL booking system with normalized schema design, transactions, triggers, stored procedures and indexing for integrity and speed. Concurrency-safe seat logic prevents double bookings.</p>
+      <p class="stack">PostgreSQL · SQL · DBMS · Streamlit</p>
+    </article>
+    <article class="card">
+      <h3>OTTools: Python Optimization Library</h3>
+      <p class="when">Jan 2025 – Mar 2025</p>
+      <p>A library that solves Linear Programming and Transportation Problems with the Simplex and Big-M methods. It uses Vogel’s Approximation Method (VAM) for initial solutions and MODI for optimality testing.</p>
+      <p class="stack">Python · Simplex · Big-M · VAM · MODI</p>
+    </article>
+    <article class="card">
+      <h3>Crypto Analytics & Price Prediction</h3>
+      <p class="when">Aug 2025 – Oct 2025</p>
+      <p>Interactive dashboard covering price movement, trading volume and market cap, with an ML model that forecasts prices 7 days ahead.</p>
+      <p class="stack">Power BI · Power Query · DAX · Python · ML</p>
+    </article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card"><h3>AI & machine learning</h3><div class="chips"><span>Machine Learning</span><span>Deep Learning</span><span>CNN</span><span>NLP</span><span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>Computer Vision</span><span>CLIP</span><span>InsightFace (ArcFace)</span><span>FAISS</span></div></div>
+    <div class="card"><h3>Programming & backend</h3><div class="chips"><span>Python</span><span>SQL</span><span>Django REST</span><span>React</span><span>Streamlit</span><span>AWS S3</span><span>GitHub</span><span>DevOps</span></div></div>
+    <div class="card"><h3>Data & BI</h3><div class="chips"><span>Pandas</span><span>NumPy</span><span>Data Visualization</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>MS Excel</span><span>Big Data Analysis</span></div></div>
+    <div class="card"><h3>Databases & core concepts</h3><div class="chips"><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>DBMS</span><span>OS</span><span>Computer Networks</span><span>Distributed Systems</span><span>DevOps</span></div></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience & leadership</h2>
+  <ul class="tl">
+    <li><h3>Member, ACM Student Chapter, NMIMS</h3><p class="when">2025 – Present</p><p>Take part in technical discussions, coding challenges and knowledge-sharing sessions.</p></li>
+    <li><h3>Volunteer Teacher, P.K Patil Foundation (NGO)</h3><p class="when">2024 · 1 month</p><p>Taught rural students and gave mentoring and academic guidance to underprivileged learners.</p></li>
+    <li><h3>Head Boy, PG Public School, Nandurbar</h3><p class="when">2019 – 2020</p><p>Led student body activities and represented students at school events and functions.</p></li>
+  </ul>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="card"><div><h3>B.Tech, Artificial Intelligence & Machine Learning</h3><p class="when">SVKM’s NMIMS MPSTME · 2023 – 2027</p></div><strong>CGPA 3.02 / 4.0 (Sem 6)</strong></div>
+    <div class="card"><div><h3>Class XII, Science</h3><p class="when">SMS Annasaheb P.K Patil H.S., Nandurbar · 2023 · HSC Board</p></div><strong>82.83%</strong></div>
+    <div class="card"><div><h3>Class X</h3><p class="when">PG Public School, Nandurbar · 2020 · CBSE</p></div><strong>85.2%</strong></div>
+  </div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+  <h2>Certifications & achievements</h2>
+  <div class="two">
+    <div class="card"><h3>Certifications</h3><ul>
+      <li>Deep Learning, IIT Ropar (NPTEL)</li>
+      <li>Machine Learning, Swayam (INI)</li>
+      <li>GitHub Workshop, ACM</li></ul></div>
+    <div class="card"><h3>Achievements</h3><ul>
+      <li>Finalist, Innovent Competition (Dhule District), solving a government problem statement</li>
+      <li>Finalist, Yougantar Hackathon</li>
+      <li>Silver Medal, International Math Olympiad (IMO)</li>
+      <li>District-level cricket player</li></ul></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2>Let’s work together</h2>
+  <p>I’m looking for an AI/ML or Data Science role. Reach me at any of these and I’ll reply soon.</p>
+  <ul class="clinks">
+    <li><span>Email</span><a href="mailto:abhishekpatil0729@gmail.com">abhishekpatil0729@gmail.com</a></li>
+    <li><span>Phone</span><a href="tel:+919834340317">9834340317</a></li>
+    <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/abhishek-patil-2b153a284">linkedin.com/in/abhishek-patil-2b153a284</a></li>
+    <li><span>GitHub</span><a href="https://github.com/AbhishekkPatilll">github.com/AbhishekkPatilll</a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Abhishek Patil · Nandurbar, Maharashtra</span><span>B.Tech AI & ML, NMIMS MPSTME</span></div></footer>
+
+</body>
+</html>
